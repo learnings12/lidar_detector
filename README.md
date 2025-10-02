@@ -28,26 +28,26 @@ If any object enters this safety circle, the node logs the obstacle’s **distan
 
       To log the object distance and angle, average distance and angle is calcuated form the save cluster. 
 
-      ![Object detection](/screenshots/gazebo_visulation.png)
+  ![Object detection](/screenshots/gazebo_visulation.png)
+  ![Object detection](/screenshots/object_detection.png)
 
 #### Safe threshold
   **Safe radius** is inialized and from the same logic above, now **avg_dist < safe_radius**. It will log **Danger**, print avg_dist and avg_ang. 
 
-  ![Object breaching threshold 1.1](/screenshots/safety_radius.png)
   ![Object breaching threshold 1.1](/screenshots/warning.png)
 
 
 #### Velocity 
   Robot subcribe to **/cmd_vel** for velocity to log linear and angular velocity. 
-  ![Logging velocity](/screenshots/Velocity.png)
+  ![Logging velocity](/screenshots/velocity_log.png)
 
-  ![Command to stop robot when obstacle is near](/screenshots/safety_radius.png)
 
 
 #### Obstacle avoidance 
   Taking logic from safety radius. 
     if avg_dist < safety_radis , Command is send by (`/Bool`) to stop the robot. 
-## Flow-Chart:
+      ![Object breaching threshold 1.1](/screenshots/safety_radius.png)
+
 
 
 ## Installation
@@ -72,16 +72,30 @@ Run your simulation (e.g., Gazebo with a robot publishing `/scan`) and then:
 ```bash
 ros2 launch mobile_robot full
 ```
+This will launch rviz, gazebo. 
+**To visulaize LiDar beam in Gazebo**
+1.Click on three dots at right corner of gazebo window
+2. Scroll down and select `Visualize lidar`
+![Visulaize_lidar](/screenshots/lidar_visual.png)
+
+3. Click on `Refresh lsit of topics`
+![topic](/screenshots/topic.png)
+
+
+**To open saved config of rviz** 
+1. Click on file ---> Open config (Ctrl+O)
+2. Navigate to srv/mobile_robot/rviz
+3. Open robot.rviz
+![rviz](/screenshots/rviz.png)
 
 In another terminal for navigation, 
 ```bash
 source install/setup.bash
-
 ros2 run mobile_robot point
 ```
 This launches log linear and angular velocity, position, number of waypoints crossed 
----
 
+---
 ## Parameters
 
 - **threshold_radius** (float, default: `1.0`)  
@@ -102,7 +116,7 @@ This launches log linear and angular velocity, position, number of waypoints cro
 ## Example Output
 
 ```text
-    Object(s) detected inside 1.00 m:
+  Object(s) detected inside 1.00 m:
   Object 1: Distance = 0.85 m, Angle = -30.0°
   Object 2: Distance = 0.90 m, Angle = 15.0°
 ```
@@ -112,6 +126,7 @@ If no objects are detected:
 ```text
 No objects inside threshold circle.
 ```
+![Object breaching threshold 1.1](/screenshots/no_obstacle.png)
 
 ---
 
