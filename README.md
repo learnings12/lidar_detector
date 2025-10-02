@@ -52,6 +52,7 @@ If any object enters this safety circle, the node logs the obstacle’s **distan
 
 ## Installation
 Some basic packages
+**For gazebo**
 ```
 sudo apt-get install ros-${ROS_DISTRO}-ros-gz
 ```
