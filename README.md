@@ -56,7 +56,7 @@ Clone the package into your ROS2 workspace `src` folder:
 
 ```bash
 cd ~/ros2_ws/src
-git clone https://github.com/yourusername/ros2-lidar-detector.git
+git clone https://github.com/yourusername/ros2-lidar-detector.git](https://github.com/learnings12/lidar_detector.git
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
