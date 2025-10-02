@@ -51,6 +51,21 @@ If any object enters this safety circle, the node logs the obstacle’s **distan
 
 
 ## Installation
+Some basic packages
+```
+sudo apt-get install ros-${ROS_DISTRO}-ros-gz
+```
+```
+ sudo apt install ros-jazzy-joint-state-publisher
+ sudo apt install ros-jazzy-joint-state-publisher-gui
+ sudo apt install ros-jazzy-teleop-twist-keyboard
+ sudo apt install ros-jazzy-xacro
+ sudo apt install ros-jazzy-ros-gz
+ source /opt/ros/jazzy/setup.bash
+ sudo rosdep init
+ rosdep update
+ rosdep install -i --from-path src --rosdistro jazzy -y
+```
 
 Clone the package into your ROS2 workspace `src` folder:
 
