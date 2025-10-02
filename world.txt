@@ -1,0 +1,12 @@
+
+
+
+
+pathWorldFile = os.path.join(
+        get_package_share_directory(namePackage), worldpath
+    )
+    gazeboLaunch = IncludeLaunchDescription(
+        gazebo_rosPackageLaunch, launch_arguments = {
+            'gz_args': f'-r -v 4 -s {pathWorldFile}', 'on_exit_shutdown':'true'
+        }.items()
+    ) 
