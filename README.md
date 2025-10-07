@@ -1,4 +1,4 @@
-# Lvel 1: ROS2 Navigation Assignment: Ishan Garg
+# ROS2 Navigation using LiDar
 
 This package is build on **Ubuntu 24.04** and **ROS2 Jazzy**.
 A ROS2 package that subscribes to LiDAR (`/scan`) data, velocity (`/cmd_vel`). Detects obstacles inside a **threshold circle** (safety radius) and logs **Linear and Angular velocities**.  
